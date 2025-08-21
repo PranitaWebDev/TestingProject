@@ -1,0 +1,229 @@
+/* ✅ Global font override */
+:root {
+    --app-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --primary: #0f7a6f;
+    --primary-light: #13a89a;
+}
+
+body {
+    font-family: var(--app-font);
+    background-color: #f9fbfc;
+    font-weight: 400;
+    line-height: 1.5;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Headings & strong text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+.navbar-brand,
+.nav-link,
+.btn {
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--primary);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+}
+
+/* Sidebar */
+.sidebar {
+    min-height: 100vh;
+    background-color: var(--primary);
+    color: #fff;
+    padding-top: 10px;
+    font-weight: 500;
+    transition: left 0.3s ease;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 2px 0;
+    transition: background 0.3s ease, padding 0.2s ease;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    padding-left: 18px;
+}
+
+.sidebar .submenu {
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .submenu a {
+    font-size: 14px;
+    padding: 8px 20px;
+    display: block;
+    border-radius: 4px;
+}
+
+.sidebar .submenu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Sections */
+.form-section {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Table */
+.table th {
+    background: #eef3f7;
+    font-weight: 600;
+}
+
+/* Badges for status */
+.badge {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .form-section {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark .table th {
+    background-color: #333;
+    color: #f1f1f1;
+}
+
+body.dark .table td {
+    color: #f1f1f1;
+}
+
+body.dark .sidebar {
+    background-color: #1e1e1e;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 991px) {
+    .sidebar {
+        position: fixed;
+        top: 56px;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        z-index: 1050;
+        overflow-y: auto;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0 !important;
+        padding: 15px;
+    }
+}
+
+/* Mobile-friendly table */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 8px;
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .table td:last-child {
+        border-bottom: none;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #666;
+    }
+}
+
+/* Mobile form adjustments */
+@media (max-width: 576px) {
+    .form-section form .col-md-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+/* Arrow animation */
+.sidebar a[aria-expanded="true"] i.fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.sidebar a i.fa-chevron-down {
+    transition: transform 0.3s ease;
+}

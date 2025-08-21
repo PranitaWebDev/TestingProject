@@ -2,9 +2,65 @@
 :root {
     --app-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    --primary: #0f7a6f;
-    --primary-light: #13a89a;
+
+    /* Default (Teal) */
+    --primary: #0095B6;
+    --primary-light: #20C997;
 }
+
+/* Theme Variants */
+.theme-06B6D4 {
+    --primary: #06B6D4;
+    /* Tailwind cyan */
+    --primary-light: #8fe9f5;
+}
+
+.theme-20C997 {
+    --primary: #20C997;
+    /* Bootstrap teal */
+    --primary-light: #7ee0c0;
+}
+
+.theme-1ABC9C {
+    --primary: #1ABC9C;
+    /* Mint turquoise */
+    --primary-light: #9debd9;
+}
+
+.theme-00B8A9 {
+    --primary: #00B8A9;
+    /* Spark teal-green */
+    --primary-light: #80e5d6;
+}
+
+.theme-006D6F {
+    --primary: #006D6F;
+    /* Deep teal */
+    --primary-light: #5ccccc;
+}
+
+.theme-007A74 {
+    --primary: #007A74;
+    /* Sea green */
+    --primary-light: #63d9ce;
+}
+
+/* Highlight active theme in dropdown */
+.dropdown-item.active {
+    background-color: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+}
+
+.dropdown-item.active .checkmark::after {
+    content: "✔";
+    position: absolute;
+    right: 10px;
+    font-size: 14px;
+}
+
+
 
 body {
     font-family: var(--app-font);
@@ -43,7 +99,7 @@ h6 {
 /* Sidebar */
 .sidebar {
     min-height: 100vh;
-    background-color: var(--primary);
+    background: var(--primary);
     color: #fff;
     padding-top: 10px;
     font-weight: 500;
@@ -82,6 +138,16 @@ h6 {
 
 .sidebar .submenu a:hover {
     background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-primary:hover {
+    background: var(--primary-light) !important;
+    border-color: var(--primary-light) !important;
 }
 
 /* Content */
